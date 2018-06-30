@@ -1,0 +1,7 @@
+{
+  "name": "my-pwa-starter-kit",
+  "short_name": "my-pwa-starter-kit",
+  "description": "basis from pwa-starter-kit",
+  "start_url": "/",
+  "display": "standalone"
+}

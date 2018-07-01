@@ -89,6 +89,13 @@
     </style>
   </head>
   <body>
-    <my-app></my-app>
+  <my-app appTitle="my app"></my-app>
+  <noscript>
+      Please enable Javascript to view this website.
+  </noscript>
+  <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+  <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <!-- Build with love using PWA Starter Kit -->
+  <script type="module" src="src/components/my-app.js" crossorigin></script>
   </body>
 </html>

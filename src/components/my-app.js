@@ -66,52 +66,78 @@ class MyApp extends connect(store)(LitElement) {
             }
             
             .menu-btn {
-            
+                background: none;
+                border: none;
+                fill: var(--app-header-text-color);
+                cursor: pointer;
+                height: 44px;
+                width: 44px;
             }
             
             .drawer-list {
-            
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                padding: 24px;
+                background: var(--app-drawer-background-color);
+                position: relative;
             }
             
             .drawer-list > a {
-            
+                display: block;
+                text-decoration: none;
+                color: var(--app-drawer-text-color);
+                line-height: 40px;
+                padding: 0 24px;
             }
             
             .drawer-list > a[selected] {
-            
+                color: var(--app-drawer-selected-color);
             }
             
             /* Workaround for IE11 displaying <main> as inline */
             main {
-            
+                display: block;
             }
             
             .main-content {
-            
+                padding-top: 64px;
+                min-height: 100vh;
             }
             
             .page {
-            
+                display: none;
             }
             
             .page[active] {
-            
+                display: block;
             }
             
             footer {
-            
+                padding: 24px;
+                background: var(--app-drawer-background-color);
+                color: var(--app-drawer-text-color);
+                text-align: center;
             }
             
             /* Wide layout: when the viewport width is bigger than 460px, layout changes to a wide layout. */
             @media (min-width: 460px) {
-                .toolbar-list {}
+                .toolbar-list {
+                    display: block;
+                }
                 
-                .menu-btn {}
+                .menu-btn {
+                    display: none;
+                }
                 
-                .main-content {}
+                .main-content {
+                    padding-top: 107px;
+                }
                 
                 /* The drawer button isn't shown in the wide layout, so we don't need to offset the title */
-                [main-title] {}
+                [main-title] {
+                    padding-right: 0;
+                }
             }
         </style>
         

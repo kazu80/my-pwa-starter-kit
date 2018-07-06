@@ -1,4 +1,5 @@
-import { LitElement, html } from '@polymer/polymer';
+import { LitElement, html } from '@polymer/lit-element';
+import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 import { connect } from 'pwa-helpers/connect-mixin.js';
 
 // This element is connected to the Redux store.
@@ -149,5 +150,22 @@ class MyApp extends connect(store)(LitElement) {
             </app-toolbar>
         </app-header>
         `;
+    }
+
+    static get properties() {
+        return {
+            appTitle: String,
+            _page: String,
+            _drawerOpened: Boolean,
+            _snackbarOpened: Boolean,
+            _offline: Boolean
+        }
+    }
+
+    constructor () {
+        super();
+        // To force all event listeners for gestures to be passive.
+        // See https://www.polymer-project.org/3.0/docs/devguide/settings#setting-passive-touch-gestures
+        setPassiveTouchGestures(true);
     }
 }

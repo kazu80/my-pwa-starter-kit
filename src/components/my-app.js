@@ -148,8 +148,27 @@ class MyApp extends connect(store)(LitElement) {
                 <button class="menu-btn" title="Menu" on-click="${_ => store.dispatch(updateDrawerState(true))}">${menuIcon}</button>
                 <div main-title>${appTitle}</div>
             </app-toolbar>
+            
+            <!-- This gets hidden on a small screen -->
+            <nav class="toolbar-list">
+                <a selected?="${_page === 'view1'}" href="/view1"></a>
+                <a selected?="${_page === 'view2'}" href="/view2"></a>
+                <a selected?="${_page === 'view3'}" href="/view3"></a>
+            </nav>
         </app-header>
+        
+        <!-- Drawer content -->
+        <app-drawer opened="${_drawerOpened}" on-opened-changed="${e => store.disptach(updateDrawerState(e.target.opened))}">
+            <nav class="drawer-list">
+                <a selected?="${_page === 'view1'}" href="/view1"></a>
+                <a selected?="${_page === 'view2'}" href="/view2"></a>
+                <a selected?="${_page === 'view3'}" href="/view3"></a>
+            </nav>
+        </app-drawer>
+        
         `;
+
+
     }
 
     static get properties() {

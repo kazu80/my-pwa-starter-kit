@@ -4,7 +4,13 @@ import { connect } from 'pwa-helpers/connect-mixin.js';
 
 // This element is connected to the Redux store.
 import { store } from '../store.js';
-import {updateDrawerState} from '../actions/app';
+
+import {
+    navigate,
+    updateOffline,
+    updateDrawerState,
+    updateLayout
+} from '../actions/app';
 
 class MyApp extends connect(store)(LitElement) {
     _render({appTitle, _page, _drawerOpened, _nackbarOpened, _offline}) {
@@ -166,8 +172,14 @@ class MyApp extends connect(store)(LitElement) {
             </nav>
         </app-drawer>
         
+        <!-- Main content -->
+        <main role="main" class="main-content">
+            <my-view1 class="page" active?="${_page === 'view1'}"></my-view1>
+            <my-view2 class="page" active?="${_page === 'view2'}"></my-view2>
+            <my-view3 class="page" active?="${_page === 'view3'}"></my-view3>
+            <my-view404 class="page" active?="${_page === 'view404'}"></my-view404>
+        </main>
         `;
-
 
     }
 

@@ -216,4 +216,13 @@ class MyApp extends connect(store)(LitElement) {
                            });
         }
     }
+
+    _stateChanged(state) {
+        this._page = state.app.page;
+        this._offline = state.app.offline;
+        this._snackbarOpened = state.app.snackbarOpened;
+        this._drawerOpened = state.app.drawerOpened;
+    }
 }
+
+window.customElements.defie('my-app', MyApp);

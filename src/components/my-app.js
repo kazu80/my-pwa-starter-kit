@@ -206,5 +206,14 @@ class MyApp extends connect(store)(LitElement) {
         installMediaQueryWatcher(`(min-width: 460px)`, (matches) => store.dispatch(updateLayout(matches)));
     }
 
-
+    _didRender(properites, changeList) {
+        if('_page' in chnageList) {
+            const pageTitle = properites.appTitle + ' - ' + changeList._page;
+            updateMetadata({
+                title: pageTitle,
+                description: pageTitle
+                // This object also takes an image property, that points to img src.
+                           });
+        }
+    }
 }

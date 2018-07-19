@@ -1,6 +1,9 @@
 import { LitElement, html } from '@polymer/lit-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 
+// These are the elements needed by element.
+import './shop-item.js'
+
 // This elements is connected to the Redux store.
 import { store } from '../store';
 

@@ -16,7 +16,7 @@ const app = (state = {drawerOpened: false}, action) => {
         case UPDATE_OFFLINE:
             return {
                 ...state,
-                offline: action.opened
+                offline: action.offline
             };
         case UPDATE_DRAWER_STATE:
             return {

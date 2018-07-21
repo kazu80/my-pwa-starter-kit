@@ -1,6 +1,10 @@
 import { LitElement, html } from '@polymer/lit-element';
 import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
 import { connect } from 'pwa-helpers/connect-mixin.js';
+import { installMediaQueryWatcher } from 'pwa-helpers/media-query';
+import { installOfflineWatcher } from 'pwa-helpers/network';
+import { installRouter } from 'pwa-helpers/router';
+import { updateMetadata } from 'pwa-helpers/metadata';
 
 // This element is connected to the Redux store.
 import { store } from '../store.js';

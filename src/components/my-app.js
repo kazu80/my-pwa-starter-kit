@@ -16,6 +16,12 @@ import {
     updateLayout
 } from '../actions/app';
 
+import '@polymer/app-layout/app-drawer/app-drawer';
+import '@polymer/app-layout/app-header/app-header';
+import '@polymer/app-layout/app-scroll-effects/effects/waterfall';
+import { menuIcon } from './my-icons';
+import './snack-bar';
+
 class MyApp extends connect(store)(LitElement) {
     _render({appTitle, _page, _drawerOpened, _nackbarOpened, _offline}) {
         // Anything that's related to rendering should be done in here.
@@ -168,7 +174,7 @@ class MyApp extends connect(store)(LitElement) {
         </app-header>
         
         <!-- Drawer content -->
-        <app-drawer opened="${_drawerOpened}" on-opened-changed="${e => store.disptach(updateDrawerState(e.target.opened))}">
+        <app-drawer opened="${_drawerOpened}" on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
             <nav class="drawer-list">
                 <a selected?="${_page === 'view1'}" href="/view1"></a>
                 <a selected?="${_page === 'view2'}" href="/view2"></a>
@@ -211,7 +217,7 @@ class MyApp extends connect(store)(LitElement) {
     }
 
     _didRender(properites, changeList) {
-        if('_page' in chnageList) {
+        if('_page' in changeList) {
             const pageTitle = properites.appTitle + ' - ' + changeList._page;
             updateMetadata({
                 title: pageTitle,
@@ -229,4 +235,4 @@ class MyApp extends connect(store)(LitElement) {
     }
 }
 
-window.customElements.defie('my-app', MyApp);
+window.customElements.define('my-app', MyApp);

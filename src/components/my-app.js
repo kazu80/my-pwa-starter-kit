@@ -39,6 +39,7 @@ class MyApp extends connect(store)(LitElement) {
                 --app-section-odd-color: white;
                 
                 --app-header-background-color: white;
+                --app-header-background-color-toolbar-list: #efefef;
                 --app-header-text-color: var(--app-dark-text-color);
                 --app-header-selected-color: var(--app-primary-color);
                 
@@ -64,14 +65,18 @@ class MyApp extends connect(store)(LitElement) {
                 font-family: 'Pacifico';
                 text-transform: lowercase;
                 font-size: 30px;
+                line-height: 70px;
                 /* In the narrow layout, the toolbar is offset by the width of the
                 drawer button, and the text looks not created. Add a padding to
                 match that button */
                 padding-right: 44px;  
             }
             
+            .toolbar-list {
+                background-color: var(--app-header-background-color-toolbar-list);
+            }
+            
             .toolbar-list > a {
-                display: block;
                 text-decoration: none;
                 color: var(--app-drawer-text-color);
                 line-height: 40px;
@@ -167,18 +172,18 @@ class MyApp extends connect(store)(LitElement) {
             
             <!-- This gets hidden on a small screen -->
             <nav class="toolbar-list">
-                <a selected?="${_page === 'view1'}" href="/view1"></a>
-                <a selected?="${_page === 'view2'}" href="/view2"></a>
-                <a selected?="${_page === 'view3'}" href="/view3"></a>
+                <a selected?="${_page === 'view1'}" href="/view1">View One</a>
+                <a selected?="${_page === 'view2'}" href="/view2">View Two</a>
+                <a selected?="${_page === 'view3'}" href="/view3">View Three</a>
             </nav>
         </app-header>
         
         <!-- Drawer content -->
         <app-drawer opened="${_drawerOpened}" on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
             <nav class="drawer-list">
-                <a selected?="${_page === 'view1'}" href="/view1"></a>
-                <a selected?="${_page === 'view2'}" href="/view2"></a>
-                <a selected?="${_page === 'view3'}" href="/view3"></a>
+                <a selected?="${_page === 'view1'}" href="/view1">View One</a>
+                <a selected?="${_page === 'view2'}" href="/view2">View Two</a>
+                <a selected?="${_page === 'view3'}" href="/view3">View Three</a>
             </nav>
         </app-drawer>
         

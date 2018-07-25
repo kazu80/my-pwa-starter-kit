@@ -58,5 +58,5 @@ class CounterElement extends LitElement {
     }
 }
 
-window.customElements.define('counter-element', CustomEvent);
+window.customElements.define('counter-element', CounterElement);
 

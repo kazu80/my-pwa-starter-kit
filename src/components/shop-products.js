@@ -1,4 +1,4 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { LitElement, html } from '@polymer/lit-element/lit-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 
 // These are the elements needed by element.

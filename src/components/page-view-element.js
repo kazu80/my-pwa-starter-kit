@@ -1,4 +1,4 @@
-import { LitElement } from '@polymer/lit-element';
+import { LitElement } from '@polymer/lit-element/lit-element';
 
 export class PageViewElement extends LitElement {
     // Only render this page it's actually visible.

@@ -1,4 +1,4 @@
-import { html } from '@polymer/lit-element';
+import { html } from '@polymer/lit-element/lit-element';
 import { PageViewElement } from './page-view-element';
 import { connect } from 'pwa-helpers/connect-mixin';
 

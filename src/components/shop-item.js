@@ -1,7 +1,7 @@
-import { LitElemet, html } from '@polymer/lit-element';
+import { LitElement, html } from '@polymer/lit-element';
 
 // This element is *not* connected to the Redux store.
-class ShopItem extends LitElemet {
+class ShopItem extends LitElement {
     _render(props) {
         return html`
             ${props.name}:

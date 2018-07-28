@@ -56,7 +56,7 @@ class MyView3 extends connect(store)(PageViewElement) {
             
             <section>
                 <h2>Redux example: shopping cart</h2>
-                <div class="cart">${addToCartIcon}><div class="circle small">${_quantity}</div></div>
+                <div class="cart">${addToCartIcon}<div class="circle small">${_quantity}</div></div>
                 <p>This is a slightly more advanced Redux example, that simulates a
                    shopping cart: getting the products, adding/removing items to the
                    cart, and a checkout action, that can sometimes randomly fail (to

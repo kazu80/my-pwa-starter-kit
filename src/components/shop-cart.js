@@ -49,7 +49,7 @@ class ShopCart extends connect(store)(LitElement) {
     }}
 
     // This is called every time something is updated the store.
-    _storeChanged(state) {
+    _stateChanged(state) {
         this._items = cartItemsSelector(state);
         this._total = cartTotalSelector(state);
     }

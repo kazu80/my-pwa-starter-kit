@@ -68,6 +68,10 @@ class MyView3 extends connect(store)(PageViewElement) {
                 <h3>Products</h3>
                 <shop-products></shop-products>
                 
+                <br>
+                <h3>Your Cart</h3>
+                <shop-cart></shop-cart>
+                
                 <div>${_error}</div>
                 <br>
                 <p>

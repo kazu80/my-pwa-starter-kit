@@ -46,7 +46,7 @@ export const checkout = (productId) => (dispatch) => {
 };
 
 export const addToCart = (productId) => (dispatch, getState) => {
-    const state = getState;
+    const state = getState();
     // Just because the UI thinks you can add this to the cart
     // doesn't mean It's in inventory (user could've fixed it);
     if (state.shop.products[productId].inventory > 0) {

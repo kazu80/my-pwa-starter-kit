@@ -80,7 +80,8 @@ const cart = (state = INITIAL_CART, action) => {
         case ADD_TO_CART:
         case REMOVE_FROM_CART:
             return {
-                addedIds: addedIds(state.addedIds, state.quantityById, action)
+                addedIds: addedIds(state.addedIds, state.quantityById, action),
+                quantityById: quantityById(state.quantityById, action)
             };
         case CHECKOUT_SUCCESS:
             return INITIAL_CART;

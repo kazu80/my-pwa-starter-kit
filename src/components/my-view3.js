@@ -38,6 +38,7 @@ class MyView3 extends connect(store)(PageViewElement) {
                 }
                 button.checkout:hover {
                     border-color: var(--app-primary-color);
+                    color: var(--app-primary-color);
                 }
                 .cart, .cart svg {
                     fill: var(--app-primary-color);
@@ -46,8 +47,8 @@ class MyView3 extends connect(store)(PageViewElement) {
                 }
                 .circle.small {
                     margin-top: -72px;
-                    width: 64px;
-                    height: 64px;
+                    width: 28px;
+                    height: 28px;
                     font-size: 16px;
                     font-weight: bold;
                     line-height: 30px;
